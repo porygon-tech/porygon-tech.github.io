@@ -2,23 +2,47 @@
 
 <html>
 <head>
+<style>
+	h1 {
+		color: gray;
+		font-family: verdana;
+		text-align: center;
+	}
+
+	body {
+		background-color: white;
+	}
+
+	p {
+		color: gray;
+		font-family: verdana;
+		font-size: 15px;
+	}
+</style>
+
+
+
 <title>Porygon Tech Lab</title>
 </head>
 <body>
 
-<h1>Welcome</h1>
-<p>We are a group of inconspicuous researchers and programmers.</p>
+<h1>Welcome to our Lab</h1>
+<p>
+<br>We are a group of inconspicuous, independent researchers and programmers.<br>
+This website is still in development!
+</p>
 
+
+<script>
 var timeDisplay = document.getElementById("time");
-
-
 function refreshTime() {
-  var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
-  var formattedString = dateString.replace(", ", " - ");
-  timeDisplay.innerHTML = formattedString;
+	var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+	var formattedString = dateString.replace(", ", " - ");
+	timeDisplay.innerHTML = formattedString;
 }
-
 setInterval(refreshTime, 1000);
+</script>
+
 <p id="time"></p>
 
 </body>
