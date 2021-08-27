@@ -1,12 +1,25 @@
  <!DOCTYPE html>
+
 <html>
 <head>
-<title>Page Title</title>
+<title>Porygon Tech Lab</title>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h1>Welcome</h1>
+<p>We are a group of inconspicuous researchers and programmers.</p>
+
+var timeDisplay = document.getElementById("time");
+
+
+function refreshTime() {
+  var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+  var formattedString = dateString.replace(", ", " - ");
+  timeDisplay.innerHTML = formattedString;
+}
+
+setInterval(refreshTime, 1000);
+<p id="time"></p>
 
 </body>
 </html> 
