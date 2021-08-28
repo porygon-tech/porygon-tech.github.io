@@ -2,6 +2,10 @@
 
 <html>
 <head>
+<!---
+-->
+
+
 <style>
 	h1 {
 		color: gray;
@@ -27,23 +31,45 @@
 <body>
 
 <h1>Welcome to our Lab</h1>
+
+<p style="border-left-style: solid; 
+border-color: #ffd633;
+background-color: #ffff66;
+border-width: 10px;
+margin-top: 50px;
+margin-bottom: 20px;
+margin-right: 150px;
+margin-left: 150px;
+padding: 20px;">
+	This website is still in development!
+<p>
+
 <p>
 <br>We are a group of inconspicuous, independent researchers and programmers.<br>
-This website is still in development!
+asdfgh
 </p>
 
 
-<script>
-var timeDisplay = document.getElementById("time");
-function refreshTime() {
-	var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
-	var formattedString = dateString.replace(", ", " - ");
-	timeDisplay.innerHTML = formattedString;
-}
-setInterval(refreshTime, 1000);
+
+<p id="fecha"></p>
+
+
+<script type="text/javascript">
+	function clockTick() {
+		var d = new Date();
+		document.getElementById("fecha").innerHTML = d;
+	}
+	setInterval(clockTick, 1000);
 </script>
 
-<p id="time"></p>
+
+
+<!---
+<script>
+	const d = new Date();
+	document.getElementById("fecha").innerHTML = d;
+</script>
+-->
 
 </body>
 </html> 
