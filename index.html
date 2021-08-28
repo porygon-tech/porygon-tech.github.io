@@ -2,15 +2,25 @@
 
 <html>
 <head>
-<!---
--->
+
 
 
 <style>
 	h1 {
 		color: gray;
-		font-family: verdana;
+		font-family: arial;
 		text-align: center;
+		padding-top: 5%;
+	}
+
+	h2 {
+		color: gray;
+		font-family: arial;
+	}
+
+	h3 {
+		color: gray;
+		font-family: arial;
 	}
 
 	body {
@@ -19,8 +29,46 @@
 
 	p {
 		color: gray;
-		font-family: verdana;
+		font-family: arial;
 		font-size: 15px;
+		margin: 1%;
+	}
+	
+	/* Style the tab */
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: #f1f1f1;
+	}
+
+	/* Style the buttons inside the tab */
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 14px 16px;
+		transition: 0.5s;
+		font-size: 17px;
+	}
+
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+		background-color: #ddd;
+	}
+
+	/* Create an active/current tablink class */
+	.tab button.active {
+		background-color: #ccc;
+	}
+
+	/* Style the tab content */
+	.tabcontent {
+		display: none;
+		padding: 6px 12px;
+		border: 1px solid #ccc;
+		border-top: none;
 	}
 </style>
 
@@ -28,40 +76,81 @@
 <link rel="shortcut icon" href="img/DNA3.ico">
 <title>Porygon Tech Lab</title>
 </head>
+
+
 <body>
 
-<h1>Welcome to our Lab</h1>
+<h1>Porygon-Tech Lab</h1>
 
 <p style="border-left-style: solid; 
-border-color: #ffd633;
-background-color: #ffff66;
-border-width: 10px;
-margin-top: 50px;
-margin-bottom: 20px;
-margin-right: 150px;
-margin-left: 150px;
-padding: 20px;">
+	color: 	black;
+	border-color: #ffd633;
+	background-color: #ffff66;
+	border-width: 10px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	margin-right: 150px;
+	margin-left: 150px;
+	padding: 20px;">
 	This website is still in development!
 <p>
 
-<p>
-<br>We are a group of inconspicuous, independent researchers and programmers.<br>
-asdfgh
+<p>Welcome to our Lab!<br>We are a group of inconspicuous, independent researchers and programmers.
 </p>
 
 
 
-<p id="fecha"></p>
 
-
+<p id="fecha">Time</p>
 <script type="text/javascript">
 	function clockTick() {
 		var d = new Date();
-		document.getElementById("fecha").innerHTML = d;
+		document.getElementById("fecha").innerHTML = d;	
 	}
 	setInterval(clockTick, 1000);
 </script>
 
+
+
+<h2>Research</h2>
+<p>See the listed categories below:</p>
+
+<div class="tab">
+	<button class="tablinks" onclick="openCity(event, 'London')">Simulations</button>
+	<button class="tablinks" onclick="openCity(event, 'Paris')">Python packages</button>
+	<button class="tablinks" onclick="openCity(event, 'Tokyo')">TerraGen</button>
+</div>
+
+<div id="London" class="tabcontent">
+	<h3>Simulations on stochastic processes for natural sciences</h3>
+	<p>PDFs listed here</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+	<h3>Our packages</h3>
+	<p>Scrappy Python packages</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+	<h3>TerraGen</h3>
+	<p>TerraGen app download</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(cityName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+</script>
 
 
 <!---
