@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} &mdash; Porygon Tech Lab</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div id="top"></div>
+    <div id="content">
+      <div id="header">
+        <!-- your logo + site title here -->
+      </div>
+      <div id="menu">
+        {% include menu.html %}
+      </div>
+      <div id="stuff">
+        {{ content }}
+      </div>
+    </div>
+    <div id="bottom"></div>
+  </div>
+</body>
+</html>

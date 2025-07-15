@@ -1,169 +1,111 @@
- <!DOCTYPE html>
+---
+layout: default
+title: home
+---
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-
-
-
-<style>
-	h1 {
-		color: darkslategray;
-		font-family: arial;
-		text-align: center;
-		padding-top: 5%;
-	}
-
-	h2 {
-		color: gray;
-		font-family: arial;
-		margin: 1% 11%;
-	}
-
-	h3 {
-		color: gray;
-		font-family: arial;
-		margin: 1% 11%;
-	}
-
-	body {
-		background-color: white;
-	}
-
-	p {
-		color: dimgray;
-		font-family: arial;
-		font-size: 15px;
-		margin: 1% 10%;
-
-	}
-	
-	/* Style the tab */
-	.tab {
-		overflow: hidden;
-		border: 1px solid #88b92d;
-		background-color: #e0f0c2;
-		margin: 0% 10%;
-	}
-
-	/* Style the buttons inside the tab */
-	.tab button {
-		background-color: inherit;
-		float: left;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		padding: 14px 16px;
-		transition: 0.5s;
-		font-size: 17px;
-	}
-
-	/* Change background color of buttons on hover */
-	.tab button:hover {
-		background-color: #c0e184;
-	}
-
-	/* Create an active/current tablink class */
-	.tab button.active {
-		background-color: #88b92d;
-		color: white;
-	}
-
-	/* Style the tab content */
-	.tabcontent {
-		display: none;
-		padding: 6px 12px;
-		border: 1px solid #88b92d;
-		border-top: none;
-		margin: 0% 10%;		
-	}
-</style>
-
-
-<link rel="shortcut icon" href="img/DNA3.ico">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Porygon Tech Lab</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="shortcut icon" href="images/DNA3.ico">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-
 <body>
+	<div id="wrapper">
+		<div id="top">
+		</div>
+		<div id="content">
+			<div id="header">
+				<!-- <img src="images/logo2.png" alt="Porygon-Tech Logo" height="73" width="73" ></img>Porygon-Tech -->
+				<div>
+					<img style="vertical-align:middle" src="images/logo2.png" alt="Porygon-Tech Logo" height="73" width="73" >
+					<span style="">PorygonTech.</span>
+				</div>
+			</div>
 
-<h1>Porygon-Tech Lab</h1>
-
-<p style="border-left-style: solid; 
-	color: 	black;
-	border-color: #ffd633;
-	background-color: #ffff66;
-	border-width: 10px;
-	margin: 1% 20%;
-	padding: 20px;">
-	<i class="material-icons" style="font-size:15px">build</i> This website is still in development!
-<p>
-
-<p>Welcome to our Lab!<br>We are a group of inconspicuous, independent researchers and programmers. Check the 
-<a href="https://github.com/porygon-tech">GitHub</a> for more stuff.
-</p>
-
-
-
-
-<p id="fecha">Loading time...</p>
-<script type="text/javascript">
-	function clockTick() {
-		var d = new Date();
-		document.getElementById("fecha").innerHTML = d;	
-	}
-	setInterval(clockTick, 1000);
-</script>
-
-
-
-<h2>Research</h2>
-<p>See the listed categories below:</p>
-
-<div class="tab">
-	<button class="tablinks" onclick="openCity(event, 'London')">Simulations</button>
-	<button class="tablinks" onclick="openCity(event, 'Paris')">Python packages</button>
-	<button class="tablinks" onclick="openCity(event, 'Tokyo')">TerraGen</button>
-</div>
-
-<div id="London" class="tabcontent">
-	<h3>Simulations on stochastic processes for natural sciences</h3>
-	<p>PDFs listed here</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-	<h3>Our packages</h3>
-	<p>Scrappy Python packages</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-	<h3>TerraGen</h3>
-	<p>TerraGen app download</p>
-</div>
-
-<script>
-function openCity(evt, cityName) {
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-	document.getElementById(cityName).style.display = "block";
-	evt.currentTarget.className += " active";
-}
-</script>
-
-
-<!---
-<script>
-	const d = new Date();
-	document.getElementById("fecha").innerHTML = d;
-</script>
--->
-
+			 <div id="menu">{% include menu.html %}</div>
+  {{ content }}
+			<div id="stuff">
+			Porygon-tech
+			<br /><br />
+			I have tested this template with IE7 and Firefox, and it works just fine with both. Some of the image properties will not show up as well in IE6, but other than that, it works in IE6 as well.
+			<br /><br />
+			<p id="fecha">Loading time...</p>
+			<script type="text/javascript">
+				function clockTick() {
+					var d = new Date();
+					document.getElementById("fecha").innerHTML = d;	
+				}
+				setInterval(clockTick, 1000);
+			</script>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			<br /><br />
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
+			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+			lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+			dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore 
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+			blandit praesent luptatum zzril delenit. 
+			<br /><br />
+			<a href="http://validator.w3.org/check?uri=referer"><img
+			src="http://www.w3.org/Icons/valid-xhtml10"
+			alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+			</div>
+		</div>
+		<div id="bottom">
+		</div>
+	</div>
 </body>
-</html> 
+</html>
