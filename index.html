@@ -1,7 +1,3 @@
----
-layout: default
-title: home
----
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,13 +22,21 @@ title: home
 				</div>
 			</div>
 
-			 <div id="menu">{% include menu.html %}</div>
-  {{ content }}
+			<div id="menu">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="gta.html">GTA (Graph To Adjacency)</a></li>
+					<li><a href="#">Linker</a></li>
+					<li><a href="#">Linked</a></li>
+					<li><a href="#">Linky</a></li>
+					<li><a href="#">Linkin Log</a></li>
+				</ul>
+			</div>
 			<div id="stuff">
-			Porygon-tech
+			<h1>What is this about</h1>
 			<br /><br />
 			I have tested this template with IE7 and Firefox, and it works just fine with both. Some of the image properties will not show up as well in IE6, but other than that, it works in IE6 as well.
-			<br /><br />
+			
 			<p id="fecha">Loading time...</p>
 			<script type="text/javascript">
 				function clockTick() {
@@ -41,6 +45,8 @@ title: home
 				}
 				setInterval(clockTick, 1000);
 			</script>
+			<br /><br />
+			<h2>What is this about</h2>
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
 			nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut 
 			wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 

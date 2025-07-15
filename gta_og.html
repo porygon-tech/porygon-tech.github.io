@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GTA</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: lightgrey;
+            background-color: #1a1a1a;
+            width: calc(100% - 80px);
+            margin: 0 40px; /* GMx? */
+
+       }
+        #mynetwork {
+            width: calc(100% - 40px);
+            margin: 0 20px;
+            height: 500px;
+            border: 1px solid lightgray;
+            font-family: Arial, sans-serif;
+            color: lightgrey;
+            background-color: whitesmoke;
+
+        }
+
+        .top-bar {
+            background-color: orangered;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            font-size: 40px;
+        }
+        p {
+            text-align: justify;
+            font-size: 18px;
+        }
+        a {
+            color: lightblue; /* Default color for links */
+        }
+
+        a:visited {
+            color: mediumpurple; /* Color for visited links */
+        }
+   
+   .toolbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+       GTA
+    </div>
+    <h1>Welcome</h1>
+
+    <p>Graph-To-Adjacency (GTA) is a tool that helps you to edit and quickly translate from graph topologies to adjacency matrices and vice versa.<br> Although pretty straightforward to use, below you will find some pro hints.
+    </p>
+    <div id="mynetwork"></div>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="script.js"></script>
+    <h2>How does this work?</h2>
+    <p>Use the buttons to create or destroy selected nodes and links. If you select an existing node and click "Add Node", the newly generated nodes will link to it. If you select more than one node (long-click them or click while pressing Ctrl), the new nodes will link to these. To create a link, first select two nodes. If you click "Remove Link" while selecting a node, all its links will be removed. The navigation buttons help you scroll and zoom in case you cannot use your mouse.
+    </p>
+    <h2>Who developed this?</h2>
+    Miguel Roman (Miki) under Creative Commons, from <a href="https://www.bascompte.net/">Bascompte Group</a>. Check out my 
+    <a href="https://github.com/porygon-tech">GitHub</a> repos for other potentially interesting stuff.  
+</body>
+</html>

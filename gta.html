@@ -1,7 +1,3 @@
----
-layout: default
-title: GTA (Graph To Adjacency)
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +22,47 @@ title: GTA (Graph To Adjacency)
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="gta.html">GTA (Graph To Adjacency)</a></li>
           <li><a href="#">Linker</a></li>
-          <!-- etc. -->
+          <li><a href="#">Linked</a></li>
+          <li><a href="#">Linky</a></li>
+          <li><a href="#">Linkin Log</a></li>
         </ul>
       </div>
       <div id="stuff">
         <h2>Graph To Adjacency</h2>
-        <p>Here you can paste your graph definition and get back its adjacency list…</p>
-        <!-- your GTA tool UI goes here -->
+        <p>Graph-To-Adjacency (GTA) is a tool that helps you to edit and quickly translate from graph topologies to adjacency matrices and vice versa.<br> Although pretty straightforward to use, below you will find some pro hints.</p>
+        <div id="mynetwork"></div>
+        <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+        <script src="script.js"></script>
+        <h2>How does this work?</h2>
+        <p>Use the buttons to create or destroy selected nodes and links. If you select an existing node and click "Add Node", the newly generated nodes will link to it. If you select more than one node (long-click them or click while pressing Ctrl), the new nodes will link to these. To create a link, first select two nodes. If you click "Remove Link" while selecting a node, all its links will be removed. The navigation buttons help you scroll and zoom in case you cannot use your mouse.
+        </p>
+        <h2>I want to import/export networks</h2>
+        <p>
+        Here are explained some tips to bring matrices from your Python code to this tool, edit them manually and bring them back to your program.
+        My recommendation for pasting a numpy array "A" as importable text is :
+        <pre>
+          print('\n'.join([' '.join(list(ai_.astype(int).astype(str))) for ai_ in list(A)]))
+        </pre>
+
+
+        On the other hand, for importing from a text string `txt` to a numpy array `A`:
+        <pre>
+          txt = '''
+          0 0 1 0 0 1 0 0 0 0
+          0 0 1 1 1 1 0 1 1 0
+          1 1 0 1 1 1 1 0 0 0
+          0 1 1 0 1 1 0 0 1 1
+          0 1 1 1 0 1 1 1 0 0
+          1 1 1 1 1 0 0 0 0 1
+          0 0 1 0 1 0 0 0 0 0
+          0 1 0 0 1 0 0 0 0 0
+          0 1 0 1 0 0 0 0 0 0
+          0 0 0 1 0 1 0 0 0 0
+          '''
+          A = np.genfromtxt(txt.splitlines())
+        </pre>
+        </p>
+        <h2>Who developed this?</h2>
       </div>
     </div>
     <div id="bottom"></div>
