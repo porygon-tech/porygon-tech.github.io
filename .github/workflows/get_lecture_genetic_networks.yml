@@ -9,8 +9,8 @@ jobs:
 
       - name: Create subdirectory and download HTML
         run: |
-          mkdir -p my-project
-          wget -O my-project/page.html https://raw.githubusercontent.com/porygon-tech/Genetic-Network-Analysis/main/gNetAnalys_local/03-28_genetic_network_analysis.html
+          mkdir -p lectures
+          wget -O lectures/genetic_network_analysis.html https://raw.githubusercontent.com/porygon-tech/Genetic-Network-Analysis/main/gNetAnalys_local/03-28_genetic_network_analysis.html
 
       - name: Deploy via Pages
         uses: actions/upload-pages-artifact@v3
