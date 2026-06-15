@@ -71,9 +71,11 @@ import micropip
 await micropip.install("reedsolo")
   `);
 
-  let code =
-    await fetch("{{ site.baseurl }}/assets/py/jpegCrypt.py")
-      .then(r=>r.text());
+  let code = await fetch("assets/py/jpegCrypt.py")
+  .then(r => {
+    if (!r.ok) throw new Error(`Failed to load: ${r.status}`);
+    return r.text();
+  });   
 
   pyodide.runPython(code);
 }
