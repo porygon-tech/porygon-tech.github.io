@@ -172,7 +172,8 @@ include:
   - _archive
   - assets/js/plugins/GTA.js
   - assets/db/speciation.json
-  - assets/py/jpegCrypt.py
+  #- assets/py/jpegCrypt.py
+  - static
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
