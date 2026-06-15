@@ -1,0 +1,5 @@
+current directory: /home/roman/LAB/MIKI/mi pag web/minimal-mistakes/vendor/bundle/ruby/3.0.0/gems/sass-embedded-1.69.5/ext/sass
+/usr/bin/ruby3.0 -I/usr/lib/ruby/vendor_ruby -rrubygems /home/roman/LAB/MIKI/mi\ pag\ web/minimal-mistakes/vendor/bundle/ruby/3.0.0/gems/rake-13.3.1/exe/rake RUBYARCHDIR\=/home/roman/LAB/MIKI/mi\ pag\ web/minimal-mistakes/vendor/bundle/ruby/3.0.0/extensions/x86_64-linux/3.0.0/sass-embedded-1.69.5 RUBYLIBDIR\=/home/roman/LAB/MIKI/mi\ pag\ web/minimal-mistakes/vendor/bundle/ruby/3.0.0/extensions/x86_64-linux/3.0.0/sass-embedded-1.69.5
+gem install --force --install-dir /home/roman/LAB/MIKI/mi pag web/minimal-mistakes/vendor/bundle/ruby/3.0.0/gems/sass-embedded-1.69.5/ext/sass/ruby --no-document --ignore-dependencies --platform x86_64-linux-gnu --version 1.69.5 sass-embedded
+cp -r /home/roman/LAB/MIKI/mi pag web/minimal-mistakes/vendor/bundle/ruby/3.0.0/gems/sass-embedded-1.69.5/ext/sass/ruby/gems/sass-embedded-1.69.5-x86_64-linux/ext/sass/dart-sass dart-sass
+rm -rf /home/roman/LAB/MIKI/mi pag web/minimal-mistakes/vendor/bundle/ruby/3.0.0/gems/sass-embedded-1.69.5/ext/sass/ruby

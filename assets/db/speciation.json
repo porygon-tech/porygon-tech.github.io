@@ -1,0 +1,687 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "speciation",
+      "degree": 14,
+      "scaling": {
+        "label": {
+          "drawThreshold": 0.3333333333333333
+        }
+      },
+      "id": "Q39350"
+    },
+    {
+      "label": "parapatric speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q200722"
+    },
+    {
+      "label": "allopatric speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q853848"
+    },
+    {
+      "label": "sympatric speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q1240247"
+    },
+    {
+      "label": "peripatric speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q2135948"
+    },
+    {
+      "label": "heteropatric speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q5747437"
+    },
+    {
+      "label": "divergent speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q25489884"
+    },
+    {
+      "label": "quantum speciation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q126487190"
+    },
+    {
+      "label": "speciation and extinction",
+      "degree": 4,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.0
+        }
+      },
+      "id": "Q113042730"
+    },
+    {
+      "label": "extinction",
+      "degree": 25,
+      "scaling": {
+        "label": {
+          "drawThreshold": 0.19230769230769232
+        }
+      },
+      "id": "Q123509"
+    },
+    {
+      "label": "extinction event",
+      "degree": 11,
+      "scaling": {
+        "label": {
+          "drawThreshold": 0.4166666666666667
+        }
+      },
+      "id": "Q55814"
+    },
+    {
+      "label": "Local extinction",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q945835"
+    },
+    {
+      "label": "evolutionary suicide",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q1126362"
+    },
+    {
+      "label": "eradication of infectious diseases",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q1347969"
+    },
+    {
+      "label": "decline in amphibian populations",
+      "degree": 6,
+      "scaling": {
+        "label": {
+          "drawThreshold": 0.7142857142857143
+        }
+      },
+      "id": "Q2363331"
+    },
+    {
+      "label": "extinction of Ammonoidea",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q3733471"
+    },
+    {
+      "label": "defaunation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q5251091"
+    },
+    {
+      "label": "Neanderthal extinction",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q6984280"
+    },
+    {
+      "label": "Poliomyelitis eradication",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q7209788"
+    },
+    {
+      "label": "invasive species eradication",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q112159162"
+    },
+    {
+      "label": "goat eradication",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q122875896"
+    },
+    {
+      "label": "pollinator decline",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q7225689"
+    },
+    {
+      "label": "Big five mass extinction",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q11878847"
+    },
+    {
+      "label": "extermination",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q13402947"
+    },
+    {
+      "label": "biodiversity loss",
+      "degree": 8,
+      "scaling": {
+        "label": {
+          "drawThreshold": 0.5555555555555556
+        }
+      },
+      "id": "Q18466271"
+    },
+    {
+      "label": "bird extinction",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q54484705"
+    },
+    {
+      "label": "decline in insect populations",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q61707847"
+    },
+    {
+      "label": "Doomsday event",
+      "degree": 2,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.6666666666666667
+        }
+      },
+      "id": "Q92268472"
+    },
+    {
+      "label": "male extinction",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q109287325"
+    },
+    {
+      "label": "species eradication",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q112159158"
+    },
+    {
+      "label": "extinction risk from global warming",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q5422084"
+    },
+    {
+      "label": "environmental issues in Africa",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q5381264"
+    },
+    {
+      "label": "Doughnut",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q62085744"
+    },
+    {
+      "label": "Triple Planetary Crisis",
+      "degree": 3,
+      "scaling": {
+        "label": {
+          "drawThreshold": 1.25
+        }
+      },
+      "id": "Q116535788"
+    },
+    {
+      "label": "extinction risk",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q28610066"
+    },
+    {
+      "label": "Smallpox virus retention debate",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q17149401"
+    },
+    {
+      "label": "extinct taxon",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q98961713"
+    },
+    {
+      "label": "extinct organism",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q87280284"
+    },
+    {
+      "label": "Ecological isolation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q20524210"
+    },
+    {
+      "label": "behavioural isolation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q105490880"
+    },
+    {
+      "label": "reproductive isolation",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q572872"
+    },
+    {
+      "label": "allospecies",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q1526622"
+    },
+    {
+      "label": "Haldane's rule",
+      "degree": 1,
+      "scaling": {
+        "label": {
+          "drawThreshold": 2.5
+        }
+      },
+      "id": "Q1570701"
+    }
+  ],
+  "links": [
+    {
+      "source": "Q39350",
+      "target": "Q113042730"
+    },
+    {
+      "source": "Q200722",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q853848",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q1240247",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q2135948",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q5747437",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q25489884",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q126487190",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q113042730",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q113042730",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q123509",
+      "target": "Q113042730"
+    },
+    {
+      "source": "Q123509",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q55814",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q945835",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q1126362",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q1347969",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q2363331",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q2363331",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q3733471",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q5251091",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q6984280",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q7209788",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q7209788",
+      "target": "Q1347969"
+    },
+    {
+      "source": "Q112159162",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q112159162",
+      "target": "Q112159158"
+    },
+    {
+      "source": "Q122875896",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q122875896",
+      "target": "Q112159158"
+    },
+    {
+      "source": "Q7225689",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q7225689",
+      "target": "Q61707847"
+    },
+    {
+      "source": "Q11878847",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q11878847",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q13402947",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q18466271",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q18466271",
+      "target": "Q2363331"
+    },
+    {
+      "source": "Q18466271",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q54484705",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q54484705",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q61707847",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q61707847",
+      "target": "Q18466271"
+    },
+    {
+      "source": "Q92268472",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q92268472",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q109287325",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q112159158",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q5422084",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q5381264",
+      "target": "Q2363331"
+    },
+    {
+      "source": "Q5381264",
+      "target": "Q18466271"
+    },
+    {
+      "source": "Q5381264",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q62085744",
+      "target": "Q2363331"
+    },
+    {
+      "source": "Q62085744",
+      "target": "Q18466271"
+    },
+    {
+      "source": "Q62085744",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q116535788",
+      "target": "Q2363331"
+    },
+    {
+      "source": "Q116535788",
+      "target": "Q18466271"
+    },
+    {
+      "source": "Q116535788",
+      "target": "Q55814"
+    },
+    {
+      "source": "Q28610066",
+      "target": "Q18466271"
+    },
+    {
+      "source": "Q17149401",
+      "target": "Q1347969"
+    },
+    {
+      "source": "Q98961713",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q87280284",
+      "target": "Q123509"
+    },
+    {
+      "source": "Q20524210",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q105490880",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q572872",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q1526622",
+      "target": "Q39350"
+    },
+    {
+      "source": "Q1570701",
+      "target": "Q39350"
+    }
+  ]
+}

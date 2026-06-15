@@ -1,0 +1,197 @@
+---
+title: "Knet"
+subtitle: "A Personal Blog or Portfolio"
+layout: single
+sidebar:
+  nav: "docs"
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <title>NetworkX Graph with vis.js</title>
+  <!-- Include vis.js -->
+  <script type="text/javascript" src="https://unpkg.com/vis-data@latest/peer/umd/vis-data.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/vis-network@latest/peer/umd/vis-network.min.js"></script>
+  <style>
+    #mynetwork {
+      width: 100%;
+      height: 50vh;
+      border: 0px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>NetworkX Graph Visualization</h2>
+  <div id="mynetwork"></div>
+
+  <script type="text/javascript">
+    // Fetch the JSON graph
+    fetch('{{ site.baseurl }}/assets/db/speciation.json')
+      .then(response => response.json())
+      .then(data => {
+        // Get computed color from CSS
+        const themeTextColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-text-color').trim();
+        const baseFontSize = 14;
+
+        // Compute degree for each node
+        const degree = {};
+        data.links.forEach(link => {
+          degree[link.source] = (degree[link.source] || 0) + 1;
+          degree[link.target] = (degree[link.target] || 0) + 1;
+        });
+
+        // Normalize degree for scaling (optional)
+        const maxDegree = Math.max(...Object.values(degree));
+
+        // Map nodes and edges to vis.js format
+        const nodes = new vis.DataSet(
+          data.nodes.map(node => ({ 
+            id: node.id, 
+            label: node.label, // String(node.id)
+            shape: 'dot',
+            degree: degree[node.id] || 0, // Attach degree
+            color: {
+              background: '#55DD33',
+              border: 'black',
+              highlight: {
+                background: 'orangered',
+                border: 'white',
+              },
+              hover: {
+                background: '#99DD55',
+                border: 'white',
+              }
+            },
+
+            scaling: {
+              label: {
+                enabled: true,
+                min: 14,
+                max: 30,
+                drawThreshold: true  // Respects per-node drawThreshold
+              }
+            },
+
+            font: {
+              color: themeTextColor,
+              face: 'Arial',
+              size: 0, // Start with hidden labels
+              bold: {
+                color: 'white',
+                face: 'Arial',
+                size: baseFontSize,
+                vadjust: -50,
+                mod: 'bold',
+              },
+            }
+          }))
+        );
+        const edges = new vis.DataSet(data.links.map(link => ({
+          from: link.source,
+          to: link.target,
+          // Add label or other attributes if present
+          // label: link.label || undefined
+          color: 'white',
+          smooth: {
+            enabled: false,
+            type: "dynamic",
+            roundness: 0.1
+          },
+        }))
+        );
+
+        // Create a network
+        const container = document.getElementById("mynetwork");
+        const visData = { nodes: nodes, edges: edges };
+        const options = {
+          physics: true,
+          interaction: { hover: true,
+                         zoomView: true
+          },
+          barnesHut: {
+            gravitationalConstant: -1000,
+            damping: 0.2,
+            maxVelocity:40,
+            springConstant: 0.07
+          },
+          edges: { arrows: 'to' }  // if directed
+        };
+        const network = new vis.Network(container, visData, options);
+        
+        function computeFontSize(node, scale) {
+          const minScaleForLabels = 0.8;
+
+          if (scale <= minScaleForLabels) return 0;
+
+          const normalizedDegree = node.degree / maxDegree;
+          const thresholdScale = 0.8 + (0.4 * (1 - normalizedDegree));
+
+          if (scale > thresholdScale) {
+            return baseFontSize / scale;
+          }
+
+          return 0;
+        }
+        
+        function updateAllLabels() {
+          const scale = network.getScale();
+          const selectedNodes = network.getSelectedNodes(); // ✅ always fresh
+          const updatedNodes = [];
+
+          nodes.forEach(node => {
+            const isHovered = node.id === hoveredNode;
+            const isSelected = selectedNodes.includes(node.id);
+
+            let fontSize = computeFontSize(node, scale);
+
+            if (isHovered || isSelected) {
+              fontSize = baseFontSize / scale;
+            }
+
+            updatedNodes.push({
+              id: node.id,
+              font: { size: fontSize }
+            });
+          });
+
+          nodes.update(updatedNodes);
+        }
+
+
+
+
+
+
+        // Fix label font size during zoom
+        let lastScale = 1; // Track last scale to avoid unnecessary updates
+        network.on("zoom", function (params) {
+          const scale = params.scale;
+
+          if (Math.abs(lastScale - scale) < 0.1) return;
+          lastScale = scale;
+
+          updateAllLabels();
+        });
+
+        // Store original label state
+        
+        let hoveredNode = null;
+
+        network.on("hoverNode", params => {
+          hoveredNode = params.node;
+          updateAllLabels();
+        });
+
+        network.on("blurNode", () => {
+          hoveredNode = null;
+          updateAllLabels();
+        });
+
+        network.on("selectNode", updateAllLabels);
+        network.on("deselectNode", updateAllLabels);
+        network.on("click", updateAllLabels); // catches deselect via empty click
+
+      })
+      .catch(err => console.error("Error loading graph:", err));
+  </script>
+</body>
