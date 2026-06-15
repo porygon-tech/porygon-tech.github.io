@@ -70,8 +70,7 @@ async function init() {
 import micropip
 await micropip.install("reedsolo")
   `);
-  console.log("{{ site.baseurl }}")
-  let code = await fetch("{{ site.baseurl }}/assets/py/jpegCrypt.py")
+  let code = await fetch("{{ '/static/py/jpegCrypt.py' | relative_url }}")
     .then(r => {
       if (!r.ok) throw new Error(`Failed: ${r.status}`);
       return r.text();
