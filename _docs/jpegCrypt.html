@@ -14,7 +14,7 @@ sidebar:
 
 <label for="seed">Seed:</label>
 <input
-  type="number"
+  type="number"const basePath = "{{ site.baseurl }}";
   id="seed"
   placeholder="Seed (key)"
   value="1337"
@@ -52,6 +52,7 @@ However, be aware that the algorithm, the constants, and default seed are public
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
+const basePath = "{{ site.baseurl }}";
 let pyodideReady;
 async function init() {
 
@@ -71,7 +72,7 @@ import micropip
 await micropip.install("reedsolo")
   `);
 
-  let code = await fetch("assets/py/jpegCrypt.py")
+  let code = await fetch(basePath + "/assets/py/jpegCrypt.py")
   .then(r => {
     if (!r.ok) throw new Error(`Failed to load: ${r.status}`);
     return r.text();
