@@ -9,6 +9,10 @@ sidebar:
   nav: "docs"
 ---
 
+<head>
+  <base href="{{ site.baseurl }}/">
+</head>   
+
 <h2 id="your-section">Spread-spectrum QIM robust image steganography</h2>
 <p>Steganography robust to JPEG compression (it even survives WhatsApp's aggressive loss). Robustness comes at the cost of reduced vessel capacity, so you'll be only able to embed short sentences. Make sure you use the same seed for embedding and recovering! oo</p>
 
@@ -52,7 +56,6 @@ However, be aware that the algorithm, the constants, and default seed are public
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 <script>
-const basePath = "{{ site.baseurl }}";
 let pyodideReady;
 async function init() {
 
@@ -72,11 +75,7 @@ import micropip
 await micropip.install("reedsolo")
   `);
 
-  let code = await fetch(basePath + "/assets/py/jpegCrypt.py")
-  .then(r => {
-    if (!r.ok) throw new Error(`Failed to load: ${r.status}`);
-    return r.text();
-  });   
+  let code = await fetch("assets/py/jpegCrypt.py").then(r => r.text());   
 
   pyodide.runPython(code);
 }
