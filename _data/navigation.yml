@@ -27,42 +27,18 @@ docs:
         url: /docs/knet/
       - title: "JPEG.crypt"
         url: /docs/jpegCrypt/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
 
-  - title: Customization
+  - title: Software (in development)
     children:
-      - title: "Configuration"
+      - title: "nothing yet"
         url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
 
-  - title: Content
+  - title: Sound & Music (in development)
     children:
-      - title: "Working with Posts"
+      - title: "nothing yet"
         url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
 
-  - title: Extras
+  - title: Illustration (in development)
     children:
-      - title: "Stylesheets"
+      - title: "nothing yet"
         url: /docs/stylesheets/
-      - title: "JavaScript"
-        url: /docs/javascript/
