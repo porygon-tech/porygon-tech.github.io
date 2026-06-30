@@ -1,0 +1,199 @@
+---
+title: "secp256k1"
+subtitle: "Schnorr signature"
+layout: single
+toc: true
+toc_label: "Contents"
+toc_sticky: true
+sidebar:
+  nav: "docs"
+---
+<h2 id="header">Schnorr signature</h2>
+<p>Sign, verify or challenge! This is a toy implementation of secp256k1 in Python, embedded in a web app. You can use it to verify ownership of public keys.</p>
+<hr>
+<div class="card">
+
+    <h3 id="generate-key-pair">Generate Key Pair</h3>
+
+    <button onclick="generateKey()">Generate</button>
+
+    <label>Secret Key</label>
+    <input id="secret-key">
+
+    <label>Compressed Public Key</label>
+    <textarea id="public-key"></textarea>
+
+</div>
+<hr>
+<div class="card">
+
+    <h3 id="sign">Sign</h3>
+
+    <label>Secret Key</label>
+    <input id="sign-secret-key">
+
+    <label>Message</label>
+    <textarea id="sign-message"></textarea>
+
+    <button onclick="signMessage()">Sign</button>
+
+    <label>Signature</label>
+    <textarea id="signature"></textarea>
+
+</div>
+<hr>
+<div class="card">
+
+    <h3 id="verify">Verify</h3>
+
+    <label>Compressed Public Key</label>
+    <textarea id="verify-public-key"></textarea>
+
+    <label>Signature</label>
+    <textarea id="verify-signature"></textarea>
+
+    <label>Message</label>
+    <textarea id="verify-message"></textarea>
+
+    <button onclick="verifySignature()">Verify</button>
+
+    <div id="verify-result"></div>
+
+</div>
+<hr>
+<div class="card">
+
+    <h3 id="challenge-nonce">Challenge Nonce</h3>
+
+    <label>Number of bytes</label>
+    <input id="nonce-bytes" type="number" value="16">
+
+    <button onclick="generateNonce()">Generate</button>
+
+    <textarea id="nonce-output"></textarea>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script>
+
+let pyodide;
+
+async function initPy(){
+
+    pyodide = await loadPyodide();
+
+    let code = await fetch("{{ '/static/py/schnorr.py' | relative_url }}")
+        .then(r=>{
+            if(!r.ok)
+                throw new Error(`Failed: ${r.status}`);
+            return r.text();
+        });
+
+    await pyodide.runPythonAsync(code);
+
+    console.log("Python loaded.");
+}
+
+window.addEventListener("load", initPy);
+
+async function generateKey(){
+
+    const result = pyodide.runPython(`
+sk, pk = keygen()
+
+(
+    str(sk),
+    encode_pubkey(pk).hex()
+)
+`).toJs();
+
+    document.getElementById("secret-key").value = result[0];
+    document.getElementById("public-key").value = result[1];
+
+    document.getElementById("sign-secret-key").value = result[0];
+    document.getElementById("verify-public-key").value = result[1];
+}
+
+async function signMessage(){
+
+    pyodide.globals.set(
+        "js_sk",
+        document.getElementById("sign-secret-key").value
+    );
+
+    pyodide.globals.set(
+        "js_msg",
+        document.getElementById("sign-message").value
+    );
+
+    const sig = pyodide.runPython(`
+encode_sig(
+    sign(
+        int(js_sk),
+        js_msg.encode()
+    )
+).hex()
+`);
+
+    document.getElementById("signature").value = sig;
+    document.getElementById("verify-signature").value = sig;
+    document.getElementById("verify-message").value =
+        document.getElementById("sign-message").value;
+}
+
+async function verifySignature(){
+
+    pyodide.globals.set(
+        "js_pk",
+        document.getElementById("verify-public-key").value
+    );
+
+    pyodide.globals.set(
+        "js_sig",
+        document.getElementById("verify-signature").value
+    );
+
+    pyodide.globals.set(
+        "js_msg",
+        document.getElementById("verify-message").value
+    );
+
+    const valid = pyodide.runPython(`
+verify(
+    decode_pubkey(bytes.fromhex(js_pk)),
+    js_msg.encode(),
+    decode_sig(bytes.fromhex(js_sig))
+)
+`);
+
+    const out = document.getElementById("verify-result");
+
+    if(valid){
+        out.textContent = "✓ Signature is VALID";
+        out.style.color = "green";
+    }else{
+        out.textContent = "✗ Signature is INVALID";
+        out.style.color = "red";
+    }
+
+}
+
+async function generateNonce(){
+
+    pyodide.globals.set(
+        "js_n",
+        parseInt(document.getElementById("nonce-bytes").value)
+    );
+
+    const nonce = pyodide.runPython(`
+gen_nonce(js_n)
+`);
+
+    document.getElementById("nonce-output").value = nonce;
+
+}
+
+</script>
+<h3 id="my-identity">Who am I</h3>
+<p>Unnecessarily disclosing our identities is an unhealthy habit.<br>When you contact me, I can prove I am the creator of this website and the one who generated the public key <br>027174538a93f9590686aebfc1043c200d2f39051bb75f677ee8fe8a7db2865221<br><br>Just send me a random challenge nonce, I will return it signed and you will be able to verity it in this application.</p>

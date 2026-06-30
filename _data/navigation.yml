@@ -27,6 +27,8 @@ docs:
         url: /docs/knet/
       - title: "JPEG.crypt"
         url: /docs/jpegCrypt/
+      - title: "signature (secp256k1)"
+        url: /docs/signature/
 
   - title: Software (in development)
     children:
